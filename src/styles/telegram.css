@@ -10,7 +10,7 @@
   --tg-theme-button-color: #3390ec;
   --tg-theme-button-text-color: #ffffff;
   --tg-theme-secondary-bg-color: #f0f0f0;
-  
+
   /* Custom game colors */
   --game-primary: #9b87f5;
   --game-secondary: #0EA5E9;
@@ -24,6 +24,8 @@
 body {
   background-color: var(--tg-theme-bg-color, #ffffff);
   color: var(--tg-theme-text-color, #222222);
+  overflow-y: auto;
+  height: 100%;
 }
 
 /* Safe area handling for notches and punch holes */
@@ -83,23 +85,28 @@ body {
     display: flex;
     flex-direction: row;
   }
-  
+
   .game-sidebar {
     width: 30%;
   }
-  
+
   .game-area {
     width: 70%;
   }
 }
 
-/* Prevent overscroll/bounce effect */
+/* Allow scrolling but prevent overscroll/bounce effect */
 html, body {
   overscroll-behavior: none;
-  overflow: hidden;
-  position: fixed;
   width: 100%;
   height: 100%;
+}
+
+/* Main content area scrolling */
+.app-content {
+  overflow-y: auto;
+  padding-bottom: 80px; /* Space for the bottom navigation bar */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 /* Performance optimizations */
@@ -137,6 +144,17 @@ html, body {
 /* Adjust spacing for Telegram main button */
 .in-telegram .game-container {
   padding-bottom: 80px; /* Space for Telegram main button */
+}
+
+/* Main container styles */
+.min-h-screen {
+  min-height: 100vh;
+  height: auto;
+}
+
+/* Ensure content is scrollable */
+.container {
+  height: 100%;
 }
 
 /* Dark mode support */

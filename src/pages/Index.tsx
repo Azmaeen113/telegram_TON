@@ -46,7 +46,7 @@ const Index: React.FC = () => {
 
   return (
     <div className={`min-h-screen bg-gradient-to-b from-[#121830] to-[#0C0E1A] text-white ${isInTelegram ? 'in-telegram' : ''}`}>
-      <div className="container mx-auto px-4 py-6">
+      <div className="container mx-auto px-4 py-6 app-content">
         <div className="text-center mb-6">
           <h1 className="text-3xl font-bold bg-gradient-to-r from-[#0088FF] to-[#9933FF] bg-clip-text text-transparent relative inline-block">
             TON Tapper
@@ -63,19 +63,19 @@ const Index: React.FC = () => {
           className="w-full"
           activationMode="manual" // Ensure manual activation for better control
         >
-          <TabsContent value="game" className="mt-0 min-h-[calc(100vh-13rem)]">
+          <TabsContent value="game" className="mt-0">
             <GameScreen />
           </TabsContent>
 
-          <TabsContent value="profile" className="mt-0 min-h-[calc(100vh-13rem)]">
+          <TabsContent value="profile" className="mt-0">
             <ProfileScreen />
           </TabsContent>
 
-          <TabsContent value="leaderboard" className="mt-0 min-h-[calc(100vh-13rem)]">
+          <TabsContent value="leaderboard" className="mt-0">
             <LeaderboardScreen />
           </TabsContent>
 
-          <TabsContent value="wallet" className="mt-0 min-h-[calc(100vh-13rem)]">
+          <TabsContent value="wallet" className="mt-0">
             <WalletScreen />
           </TabsContent>
 

@@ -268,7 +268,7 @@ const GameScreen: React.FC = () => {
   }, [isPlaying, showMainButton]);
 
   return (
-    <div className="flex flex-col h-[calc(100vh-13rem)]">
+    <div className="flex flex-col">
       <div className="flex justify-between items-center mb-4">
         <PointsDisplay points={points} />
         {isPlaying && <GameTimer timeLeft={timeLeft} />}
