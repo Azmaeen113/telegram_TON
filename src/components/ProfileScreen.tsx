@@ -8,7 +8,7 @@ import { useGameStore } from "@/store/gameStore";
 
 const ProfileScreen: React.FC = () => {
   const { points, highestCombo, gamesPlayed } = useGameStore();
-  
+
   // Mock data for achievements
   const achievements = [
     {
@@ -32,7 +32,7 @@ const ProfileScreen: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-4 pb-20">
+    <div className="space-y-4 pb-32">
       <Card className="bg-gradient-to-br from-[#121830] to-[#0C0E1A] text-white border border-[#9933FF]/30">
         <CardHeader className="pb-2">
           <CardTitle className="text-lg bg-clip-text text-transparent bg-gradient-to-r from-[#0088FF] to-[#9933FF]">Profile</CardTitle>
@@ -114,7 +114,7 @@ const ProfileScreen: React.FC = () => {
                 )}
               </div>
               <Progress value={achievement.progress} className="h-1 bg-[#FFFFFF]/10">
-                <div className="h-full bg-gradient-to-r from-[#0088FF] to-[#33FF66]" 
+                <div className="h-full bg-gradient-to-r from-[#0088FF] to-[#33FF66]"
                      style={{ width: `${achievement.progress}%` }} />
               </Progress>
               {index < achievements.length - 1 && <Separator className="my-2 bg-[#FFFFFF]/10" />}

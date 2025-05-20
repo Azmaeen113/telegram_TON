@@ -12,15 +12,15 @@ const WalletScreen: React.FC = () => {
   const { toast } = useToast();
   const { points } = useGameStore();
   const [walletConnected, setWalletConnected] = useState(false);
-  
+
   // Mock conversion rate: 10,000 TapTokens = 0.01 TON
   const conversionRate = 10000;
   const minimumWithdrawal = 100000; // 0.1 TON minimum
-  
+
   const tonAmount = points / conversionRate;
   const canWithdraw = points >= minimumWithdrawal;
   const progressPercentage = Math.min((points / minimumWithdrawal) * 100, 100);
-  
+
   const connectWallet = () => {
     // Mock wallet connection
     toast({
@@ -30,7 +30,7 @@ const WalletScreen: React.FC = () => {
     });
     setWalletConnected(true);
   };
-  
+
   const withdrawTON = () => {
     // Mock withdrawal process
     toast({
@@ -41,16 +41,16 @@ const WalletScreen: React.FC = () => {
   };
 
   return (
-    <div className="space-y-4 pb-20">
+    <div className="space-y-4 pb-32">
       <Card className="bg-gradient-to-br from-[#121830] to-[#0C0E1A] text-white border border-[#9933FF]/30 overflow-hidden relative">
         {/* Hexagonal grid background */}
-        <div className="absolute inset-0 opacity-5" 
+        <div className="absolute inset-0 opacity-5"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15L30 0zm0 5.62L9.9 16.98v26.04L30 54.38l20.1-11.36V16.98L30 5.62z' fill='%239933FF' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E")`,
             backgroundSize: '60px 60px'
           }}
         ></div>
-        
+
         <CardHeader className="pb-2 relative z-10">
           <CardTitle className="text-lg flex items-center gap-2">
             <Wallet size={20} className="text-[#0088FF]" />
@@ -96,13 +96,13 @@ const WalletScreen: React.FC = () => {
 
       <Card className="bg-gradient-to-br from-[#121830] to-[#0C0E1A] text-white border border-[#9933FF]/30 overflow-hidden relative">
         {/* Hexagonal grid background */}
-        <div className="absolute inset-0 opacity-5" 
+        <div className="absolute inset-0 opacity-5"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15L30 0zm0 5.62L9.9 16.98v26.04L30 54.38l20.1-11.36V16.98L30 5.62z' fill='%239933FF' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E")`,
             backgroundSize: '60px 60px'
           }}
         ></div>
-        
+
         <CardHeader className="pb-2 relative z-10">
           <CardTitle className="text-lg flex items-center gap-2">
             <Coins size={20} className="text-[#33FF66]" />
@@ -126,14 +126,14 @@ const WalletScreen: React.FC = () => {
               </div>
             </div>
           </div>
-          
+
           <div>
             <div className="flex justify-between text-xs text-[#FFFFFF]/70 mb-2">
               <span>Progress to minimum withdrawal</span>
               <span>{progressPercentage.toFixed(0)}%</span>
             </div>
             <div className="h-2 w-full bg-[#FFFFFF]/10 rounded-full overflow-hidden">
-              <div 
+              <div
                 className={`h-full ${progressPercentage >= 100 ? 'bg-[#33FF66]' : 'bg-gradient-to-r from-[#0088FF] to-[#9933FF]'}`}
                 style={{ width: `${progressPercentage}%`, transition: 'width 1s ease-out' }}
               ></div>
@@ -142,9 +142,9 @@ const WalletScreen: React.FC = () => {
               Minimum withdrawal: <span className="text-[#33FF66]">0.1 TON</span> ({minimumWithdrawal.toLocaleString()} TapTokens)
             </div>
           </div>
-          
+
           <Separator className="bg-[#FFFFFF]/10" />
-          
+
           <div className="text-sm">
             <div className="flex justify-between mb-2 py-2 px-3 bg-[#FFFFFF]/5 rounded-lg">
               <span className="text-[#FFFFFF]/80">Exchange Rate</span>
@@ -153,8 +153,8 @@ const WalletScreen: React.FC = () => {
           </div>
         </CardContent>
         <CardFooter className="relative z-10">
-          <Button 
-            onClick={withdrawTON} 
+          <Button
+            onClick={withdrawTON}
             className={`w-full ${canWithdraw ? 'bg-gradient-to-r from-[#33FF66] to-[#00CC44]' : 'bg-[#FFFFFF]/10'} text-white relative group overflow-hidden ${!walletConnected || !canWithdraw ? 'opacity-50 cursor-not-allowed' : 'hover:opacity-90'}`}
             disabled={!walletConnected || !canWithdraw}
           >

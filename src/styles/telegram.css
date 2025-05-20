@@ -105,7 +105,7 @@ html, body {
 /* Main content area scrolling */
 .app-content {
   overflow-y: auto;
-  padding-bottom: 80px; /* Space for the bottom navigation bar */
+  padding-bottom: 120px; /* Increased space for the bottom navigation bar */
   -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 

@@ -79,7 +79,7 @@ const LeaderboardScreen: React.FC = () => {
   const tabsId = useId();
 
   return (
-    <div className="pb-20">
+    <div className="pb-32">
       <Card className="bg-gradient-to-br from-[#121830] to-[#0C0E1A] text-white border border-[#9933FF]/30">
         <CardHeader className="pb-2 flex flex-row items-center">
           <Trophy size={22} className="text-[#FFD700] mr-2" />
