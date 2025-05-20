@@ -1,0 +1,17 @@
+{
+  "name": "TON Tapper",
+  "short_name": "TON Tapper",
+  "description": "A tap-to-earn game on the TON blockchain",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#121830",
+  "theme_color": "#0088FF",
+  "icons": [
+    {
+      "src": "/ton-logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
